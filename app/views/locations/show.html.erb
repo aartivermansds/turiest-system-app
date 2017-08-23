@@ -25,6 +25,8 @@
   <% end %>
 </div>
 
+<div id="map"></div>
+
 <div style="padding:20px;">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               locations_path, :class => 'btn btn-default'  %>
@@ -37,3 +39,29 @@
               :class => 'btn btn-danger' %>
 
 </div>
+<script>
+  function initMap() {
+    var loc_lat = <%= @location.latitude %>;
+    var loc_lang = <%= @location.longitude %>;
+    var loc = {lat: loc_lat, lng: loc_lang};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      scrollwheel: true,
+      center: loc
+    });
+    var marker = new google.maps.Marker({
+      position: loc,
+      map: map
+    });
+  }
+</script>
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoro6ynE7OIL5FALa4PYubHTKtFSUs58U&callback=initMap">
+</script>
+
+<style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>

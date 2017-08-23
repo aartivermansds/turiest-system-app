@@ -48,3 +48,4 @@ end
 gem "twitter-bootstrap-rails"
 gem "cocoon"
 gem 'carrierwave', '~> 1.0'
+gem 'geocoder'
