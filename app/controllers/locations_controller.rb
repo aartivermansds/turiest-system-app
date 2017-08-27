@@ -7,6 +7,12 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+  def import
+    Location.import(params[:import][:file])
+    redirect_to root_url, notice: "Location data imported"
+    
+  end
+
   # GET /locations/1
   # GET /locations/1.json
   def show
@@ -59,6 +65,13 @@ class LocationsController < ApplicationController
       format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def find_near_by_locations
+    @location = Location.find(params[:id])
+    lat = @location.latitude
+    long = @location.longitude
+    @locations = Location.near([lat, long], 100, :units => :km)
   end
 
   private
