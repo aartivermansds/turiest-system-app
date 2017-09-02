@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
   resources :locations do 
-    collection do 
-      post :import
-    end
     member do 
       get :find_near_by_locations
     end
+  end
+  namespace :admins do
+    resources :locations do 
+      collection do 
+        post :import
+      end
+      member do 
+        get :find_near_by_locations
+      end
+    end
+
   end
   #get 'home/index'
 

@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+class Admins::LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -21,12 +21,12 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
-    # @image = @location.images.build
   end
 
   # GET /locations/1/edit
   def edit
-    # @image = @location.images.build
+    @location = Location.find(params[:id])
+ 
   end
 
   # POST /locations
@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to admins_location_path(@location), notice: 'Location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class LocationsController < ApplicationController
   def update
     respond_to do |format|
       if @location.update(location_params)
-        format.html { redirect_to @location, notice: 'Location was successfully updated.' }
+        format.html { redirect_to admins_location_path(@location), notice: 'Location was successfully updated.' }
         format.json { render :show, status: :ok, location: @location }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy
     respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+      format.html { redirect_to admins_locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
