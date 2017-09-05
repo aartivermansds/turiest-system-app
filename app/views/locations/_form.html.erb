@@ -55,7 +55,7 @@
     <p><strong>images:</strong></p>
 
     <%= f.fields_for :images do |image| %>
-      <%= render 'image',f: :image %>
+      <%= render 'image_fields',f: image %>
     <% end %>
     <%= link_to_add_association "Upload Image", f, :images, class: "btn btn-primary" %>
   </div>

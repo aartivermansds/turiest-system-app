@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :location_categories
   resources :locations do 
     member do 
       get :find_near_by_locations

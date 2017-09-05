@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location_category.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @location_category.description %>
+</p>
+
+<%= link_to 'Edit', edit_location_category_path(@location_category) %> |
+<%= link_to 'Back', location_categories_path %>
