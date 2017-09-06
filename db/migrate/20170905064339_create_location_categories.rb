@@ -3,7 +3,6 @@ class CreateLocationCategories < ActiveRecord::Migration
     create_table :location_categories do |t|
       t.string :name
       t.string :description
-
       t.timestamps null: false
     end
   end

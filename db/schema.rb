@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905064339) do
+ActiveRecord::Schema.define(version: 20170905085324) do
 
   create_table "images", force: :cascade do |t|
     t.string   "image"
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20170905064339) do
     t.string   "city"
     t.string   "state"
     t.text     "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "location_category_id"
   end
 
   create_table "models", force: :cascade do |t|
