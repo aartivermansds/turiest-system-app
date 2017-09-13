@@ -14,3 +14,7 @@
 //= require twitter/bootstrap
 //= require cocoon
 //= require jssor.slider-26.1.5.min
+//= require jquery.dataTables.min
+//= require dataTables.bootstrap.min
+//= require dataTables.responsive.min
+//= require responsive.bootstrap.min

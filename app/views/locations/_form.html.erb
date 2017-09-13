@@ -51,12 +51,14 @@
     <%=f.error_span(:about) %>
   </div>
 
-  <div>
-    <%= f.label :location_category %><br>
-    <%= f.select :location_category_id, options_for_select(LocationCategory.all.collect{ |u| [u.name, u.id] }), {prompt: "Select location"}, {class: "form-control"} %>
+  <div class="form-group">
+    <%= f.label :location_category, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :location_category_id, options_for_select(LocationCategory.all.collect{ |u| [u.name, u.id] }), {prompt: "Select location"}, {class: "form-control"} %>
+    </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <p><strong>images:</strong></p>
 
     <%= f.fields_for :images do |image| %>

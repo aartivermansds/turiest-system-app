@@ -24,7 +24,7 @@
         <td><%= location.city %></td>
         <td><%= location.state %></td>
         <td><%= location.about %></td>
-        <td><%=l location.created_at %></td>
+        <td><%= location.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_location_path(location), :class => 'btn btn-default btn-xs' %>
